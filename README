@@ -1,0 +1,40 @@
+README
+======
+
+Our project is a machine learning module that trained on data from URF games.
+Given a set of 5 champions, our service will predict the result of a match, 
+i.e. victory or defeat.
+
+We used Python and MATLAB.
+
+System requirements: Python 2
+
+To run, open terminal and cd to the directory containing teamEval.py. 
+Run 'python teamEval.py'.
+
+* To reconstruct the training process, all paths to local files used in 
+each script must be modifed to fit the appropriate environment.
+
+scraper.py
+----------
+A Python script used to pull URF game IDs from the endpoint. These IDs are
+written to a file on disk. We left this script running for over a week. 
+We ended up collecting almost 60,000 game IDs.
+
+fetcher.py
+----------
+A Python script used to pull game data given a list of game IDs. After URF
+concluded, we used this script to pull game data through the Riot API.
+We constructed feature vectors for our design matrix as we pulled the game data.
+This script also writes the final design matrix and its respective labels
+for training into a .mat file.
+
+regression.m
+------------
+A MATLAB script we used to perform find the beta-vector for our logistic regression
+classfier.
+
+teamEval.py
+-----------
+The main interface of this project. It contains a hard-coded version of the beta
+vector found using regression.m.
