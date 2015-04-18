@@ -39,7 +39,8 @@ classfier.
 teamEval.py
 -----------
 The main interface of this project. It contains a hard-coded version of the beta
-vector found using regression.m.
+vector found using regression.m. Run our project by using 
+python teamEval.py
 
 Team Members:
 -----------
